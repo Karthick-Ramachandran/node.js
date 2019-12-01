@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Admin DashBoard</title>
+    <style>
+      .dropper {
+    height: 40vh;
+    width: 100%;
+    border: 2px dashed grey;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F7FA;
+    position: relative;
+  }
+  .dropper:hover {
+    background-color: white;
+    color: black;
+}
+.theupin {
+  height: 30vh;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+    {{ style('app-assets/vendors/css/vendors.min.css') }}
+    {{ style('app-assets/vendors/css/ui/prism.min.css') }}
+     
+    {{ style('app-assets/css/bootstrap.css')}}
+    {{ style('app-assets/css/bootstrap-extended.css')}}
+    {{ style('app-assets/css/colors.css')}}
+    {{ style('app-assets/css/components.css')}}
+    {{ style('app-assets/css/core/menu/menu-types/vertical-menu.css')}}
+    {{ style('app-assets/css/core/colors/palette-gradient.css')}}
+    {{ style('https://vjs.zencdn.net/7.5.5/video-js.css') }}
+   {{ style('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}
+
+    {{ style('assets/css/style.css')}}
+
+</head>
+
+
+<body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+
+ <!-- BEGIN: Header-->
+<nav
+  class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-dark navbar-shadow"
+>
+  <div class="navbar-wrapper">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav flex-row">
+        <li class="nav-item mobile-menu d-md-none mr-auto">
+          <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"
+            ><i class="ft-menu font-large-1"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="/dashboard/admin">
+            <h2 class="brand-text">DashBoard</h2>
+          </a>
+        </li>
+        <li class="nav-item d-md-none">
+          <a
+            class="nav-link open-navbar-container"
+            data-toggle="collapse"
+            data-target="#navbar-mobile"
+            ><i class="fa fa-ellipsis-v"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-container content">
+      <div class="collapse navbar-collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav mr-auto float-left">
+          <li class="nav-item d-none d-md-block">
+            <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"
+              ><i class="ft-menu"></i
+            ></a>
+          </li>
+          <li class="nav-item d-none d-md-block">
+            <a class="nav-link nav-link-expand" href="#"
+              ><i class="ficon ft-maximize"></i
+            ></a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto float-left">
+          <li class="nav-item d-none d-md-block">
+            <a class="nav-link" href="/logout"> Logout </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- END: Header-->
+
+<!-- BEGIN: Main Menu-->
+
+<div
+  class="main-menu menu-fixed menu-dark menu-accordion menu-shadow"
+  data-scroll-to-active="true"
+>
+  <div class="main-menu-content">
+    <ul
+      class="navigation navigation-main"
+      id="main-menu-navigation"
+      data-menu="menu-navigation"
+    >
+      <li class=" navigation-header">
+        <span>Dashboard</span
+        ><i
+          class=" ft-minus"
+          data-toggle="tooltip"
+          data-placement="right"
+          data-original-title="General"
+        ></i>
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/admin"
+          ><i class="ft-home"> Dashboard Home</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/upload"
+          ><i class="ft-box"> Upload Items</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/gait/recognition"
+          ><i class="ft-eye"> Gait Recognition</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/smart-alert/image"
+          ><i class="ft-camera"> SmartAlert Image</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/smart-alert/video"
+          ><i class="ft-briefcase"> SmartAlert Video</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/datatable"
+          ><i class="ft-briefcase"> DataTable</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/maps"
+          ><i class="ft-map"> Locate with Map</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/wanted"
+          ><i class="ft-file"> Wanted Data</i></a
+        >
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/mapping-and-profiling"
+          ><i class="ft-menu"> Mapping and Profiling</i></a
+        >
+      </li>
+      <li class=" nav-item">
+        <a href="#"
+          ><i class="ft-monitor"></i
+          ><span class="menu-title" data-i18n="">Live Examples</span
+          ><span class="badge badge badge-primary badge-pill float-right mr-2"
+            >3</span
+          ></a
+        >
+        <ul class="menu-content">
+          <li>
+            <a class="menu-item" href="https://66.85.77.82:3000/"
+              >Object Detection</a
+            >
+          </li>
+          <li>
+            <a class="menu-item" href="http://66.85.77.82:3001/face_detection"
+              >Face Detection</a
+            >
+          </li>
+          <li>
+            <a class="menu-item" href="https://66.85.77.82:3002/">Posenet</a>
+          </li>
+        </ul>
+      </li>
+      <li class=" nav-item">
+        <a href="#"
+          ><i class="ft-layout"></i
+          ><span class="menu-title" data-i18n="">Output data</span
+          ><span class="badge badge badge-primary badge-pill float-right mr-2"
+            >3</span
+          ></a
+        >
+        <ul class="menu-content">
+          <li>
+            <a class="menu-item" href="/dashboard/face/recognition"
+              >Face Detection</a
+            >
+          </li>
+          <li>
+            <a
+              class="menu-item"
+              href="/dashboard/number-plate"
+              >Number Plate</a
+            >
+          </li>
+          <li>
+            <a class="menu-item" href="/dashboard/object/recognition"
+              >Object Detection</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class="menu-item" href="/dashboard/profile"
+          ><i class="ft-user"> Profile</i></a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- END: Main Menu-->
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+  <div class="content-wrapper">
+    <div class="content-header row">
+      @!section('content')
+    </div>
+  </div>
+</div>
+<!-- END: Content-->
+
+<!-- END: Content-->
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+
+    <!-- BEGIN: Footer-->
+  
+    <!-- END: Footer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    {{ script('app-assets/vendors/js/vendors.min.js')}}
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    {{ script('app-assets/vendors/js/ui/prism.min.js')}}
+    <!-- END: Page Vendor JS-->
+     {{ script('https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js') }}
+    <!-- BEGIN: Theme JS-->
+    {{ script('app-assets/js/core/app-menu.js')}}
+    {{ script('app-assets/js/core/app.js')}}
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <!-- END: Page JS-->
+    {{ script('assets/extra-libs/multicheck/datatable-checkbox-init.js') }}
+{{ script('assets/extra-libs/DataTables/datatables.min.js') }}
+    <script>
+        $('#zero_config').DataTable();
+    </script>
+</body>
+<!-- END: Body-->
+
+</html>

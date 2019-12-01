@@ -1,0 +1,64 @@
+@layout('dashboard.layouts.app')
+
+
+@section('content')
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-12 col-lg-12">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-title">Wanted</div>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Created Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @each(data in repo)
+                                  <tr>
+                                      @if(data.type === "image")
+                                        
+                                                                            <td> 
+
+                                        <center>
+                                           <img src="{{ assetsUrl(data.asset) }}" width="300" height="240" alt="{{ data.asset }}" srcset="">
+                                        </center>
+                                       
+</td>
+
+                                      @endif
+
+                                      @if(data.type === "video")
+                                        <td>
+                                            <center>  
+                                        <video
+    class="video-js"
+    controls
+    preload="auto"
+    width="300"
+    height="264"
+    poster="https://images.pexels.com/photos/2127463/pexels-photo-2127463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  >
+    <source src="{{ data.asset }}" type="video/mp4" />
+    
+  </video>
+                                            </center>
+</td>
+                                      @endif
+
+<td> 
+{{ data.created_at }}   
+</td>
+                                  </tr>
+                                @endeach
+                            </tbody>
+                        </table>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

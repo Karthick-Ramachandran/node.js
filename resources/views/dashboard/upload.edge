@@ -1,0 +1,59 @@
+@layout('dashboard.layouts.app')
+
+@section('content')
+       <div class="container">
+           @if(flashMessage('image'))
+             <div class="alert alert-success text-center">
+               {{ flashMessage('image') }}
+           </div>
+           @endif
+           
+           <div class="row justify-content-center">
+               <div class="col-lg-8 col-xs-12">
+               <div>
+                   <form method="POST" action="{{ route('upload') }}" enctype="multipart/form-data">
+                    {{ csrfField() }}
+                        <div class="form-group dropper">
+                            <input name="asset" type="file" class=" theupin form-control-file" id="input" multiple>
+                            <span>Drag and drop here or click to add images/videos</span>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="p-1">
+                                <input type="radio" name="folder" value="repo" checked> Repo
+                            </div>
+                            <div class="p-1">
+                                <input type="radio" name="folder" value="wanted"> Wanted
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div>
+                               <button class="btn btn-secondary" id="btn" disabled type="submit">Upload</button>
+                            </div>
+                        </div>
+                  </form>
+                  <div class="mt-4"  id="dis" style="display:none">
+                      <div class="card">
+                          <div class="card-body">
+                      <div class="text-center" id="out">
+                          <div class="text-primary display-5"> File name(s)</div>
+                      </div>
+                          </div>
+                      </div>
+                  </div>
+
+               </div>
+               </div>
+           </div>
+       </div>
+       <script>
+            document.getElementById('input').addEventListener('change', function(e) {
+               document.getElementById('btn').disabled = false;
+                document.getElementById('dis').style.display = "block";
+
+               for( var i = 0; i < e.target.files.length; i++) {
+                   document.getElementById('out').innerHTML += "<p class='mt-2'>" + e.target.files[i].name + "</p>"
+               }
+            });
+       </script>
+@endsection
+

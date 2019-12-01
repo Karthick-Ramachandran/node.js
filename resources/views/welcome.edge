@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title >FreshVegetables</title>
+  <style>
+    body {
+      margin:0;
+      padding: 0;
+      opacity: 0.6;
+      background-image: url('https://images.pexels.com/photos/952476/pexels-photo-952476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .overlay {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+    }
+    .button {
+      padding: 0.5rem;
+      background-color: blue;
+      color:white;
+      outline: none;
+      margin:1.5rem;
+      float: right;
+      border-radius: 1.3rem;
+    }
+  </style>
+</head>
+<body >
+<div class="overlay">
+   <button class="button" id="clicked">Login</button>
+   <button class="button">Home</button>
+
+</div>
+
+<script>
+  const btn = document.getElementById('clicked');
+  let number = 0;
+  btn.addEventListener('click', function(){
+    number += 1;
+    if(number === 3) {
+      location.href = "/login";
+    }
+  })
+</script>
+</body>
+</html>
